@@ -14,7 +14,7 @@
         </li>
       <!-- } -->
     </ul>
-    <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name"/>
+    <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" [userId]="selectedUser.id"/>
     <ng-template #fallback>
       <p>No user selected.</p>
     </ng-template>
