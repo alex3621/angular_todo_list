@@ -4,6 +4,10 @@
 
 <body>
   <main>
+    @if (showAddTask)
+    {
+      <app-add-task/>
+    }
     <ul>
       <!-- @for (user of users; track user.id){ -->
         <li *ngFor="let user of users">
@@ -15,7 +19,8 @@
         </li>
       <!-- } -->
     </ul>
-    <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" [userId]="selectedUser.id"/>
+    <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" [userId]="selectedUser.id" 
+    (add_clicked)="onAddTaskClicked()"/>
     <ng-template #fallback>
       <p>No user selected.</p>
     </ng-template>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , Output, EventEmitter} from '@angular/core';
 import { TaskComponent } from "./task/task.component";
 
 @Component({
@@ -11,6 +11,8 @@ import { TaskComponent } from "./task/task.component";
 export class TasksComponent {
   @Input({required: true}) name! : string
   @Input({required: true}) userId! : string
+  @Output() add_clicked = new EventEmitter<boolean>();
+
   tasks = [
     {
       id: 't1',
@@ -43,5 +45,11 @@ export class TasksComponent {
 
   onCompleteTask(id:string){
     this.tasks = this.tasks.filter((task)=>task.id !== id);
+  }
+
+  addTask()
+  {
+    console.log('add task clicked');
+    this.add_clicked.emit(true);
   }
 }
