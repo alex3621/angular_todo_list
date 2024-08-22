@@ -12,6 +12,7 @@ export class TasksComponent {
   @Input({required: true}) name! : string
   @Input({required: true}) userId! : string
   @Output() add_clicked = new EventEmitter<boolean>();
+  @Output() cancel_clicked = new EventEmitter<boolean>();
 
   tasks = [
     {
@@ -51,5 +52,11 @@ export class TasksComponent {
   {
     console.log('add task clicked');
     this.add_clicked.emit(true);
+  }
+
+  cancel_ddTask()
+  {
+    console.log('cancel task clicked');
+    this.cancel_clicked.emit(true);
   }
 }

@@ -20,7 +20,9 @@
       <!-- } -->
     </ul>
     <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" [userId]="selectedUser.id" 
-    (add_clicked)="onAddTaskClicked()"/>
+    (add_clicked)="onAddTaskClicked()"
+    (cancel_clicked)="onAddTaskClose()" 
+    />
     <ng-template #fallback>
       <p>No user selected.</p>
     </ng-template>

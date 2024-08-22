@@ -29,4 +29,8 @@ get selectedUser(){
  onAddTaskClicked() {
   this.showAddTask = true;
 }
+
+onAddTaskClose() {
+  this.showAddTask = false;
+}
 }
