@@ -54,7 +54,7 @@ export class TasksComponent {
     this.add_clicked.emit(true);
   }
 
-  cancel_ddTask()
+  cancel_addTask()
   {
     console.log('cancel task clicked');
     this.cancel_clicked.emit(true);

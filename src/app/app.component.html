@@ -6,7 +6,7 @@
   <main>
     @if (showAddTask)
     {
-      <app-add-task/>
+      <app-add-task (cancel_clicked)="onAddTaskClose()"/>
     }
     <ul>
       <!-- @for (user of users; track user.id){ -->
@@ -21,7 +21,6 @@
     </ul>
     <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" [userId]="selectedUser.id" 
     (add_clicked)="onAddTaskClicked()"
-    (cancel_clicked)="onAddTaskClose()" 
     />
     <ng-template #fallback>
       <p>No user selected.</p>

@@ -31,6 +31,7 @@ get selectedUser(){
 }
 
 onAddTaskClose() {
+  console.log('cancel clicked');
   this.showAddTask = false;
 }
 }
