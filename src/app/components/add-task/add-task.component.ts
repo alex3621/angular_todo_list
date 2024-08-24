@@ -27,5 +27,6 @@ export class AddTaskComponent {
       summary: this.enteredSummary,
       date: this.enteredDueDate
     })
+    this.cancel_add();
   }
 }

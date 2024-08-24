@@ -36,8 +36,7 @@ onAddTaskClose() {
   this.showAddTask = false;
 }
 @ViewChild(TasksComponent) tasksComponent!: TasksComponent;
-onAddTask(task: NewTask) {
-  console.log('task added', task);
+onAddTask() {
   this.showAddTask = false;
 }
 
