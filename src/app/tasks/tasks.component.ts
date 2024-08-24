@@ -1,5 +1,6 @@
 import { Component, Input , Output, EventEmitter} from '@angular/core';
 import { TaskComponent } from "./task/task.component";
+import { NewTask } from '../components/add-task/new-task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -58,5 +59,15 @@ export class TasksComponent {
   {
     console.log('cancel task clicked');
     this.cancel_clicked.emit(true);
+  }
+
+  onSubtmitTask(taskData: NewTask){
+    this.tasks.unshift({
+      id: new Date().getTime.toString(),
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.date,
+      userId: this.userId
+    })
   }
 }

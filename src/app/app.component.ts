@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { UserComponent } from './components/user/user.component';
 import { TasksComponent } from "./tasks/tasks.component";
 import { DUMMY_USERS } from './dummy_user';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { NewTask } from './components/add-task/new-task.model';
 
 @Component({
   selector: 'app-root',
@@ -34,4 +35,10 @@ onAddTaskClose() {
   console.log('cancel clicked');
   this.showAddTask = false;
 }
+@ViewChild(TasksComponent) tasksComponent!: TasksComponent;
+onAddTask(task: NewTask) {
+  console.log('task added', task);
+  this.showAddTask = false;
+}
+
 }
