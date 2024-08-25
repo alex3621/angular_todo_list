@@ -6,7 +6,7 @@
   <main>
     @if (showAddTask)
     {
-      <app-add-task (cancel_clicked)="onAddTaskClose()" (addTask)="tasksComponent.onSubtmitTask($event)" (addTask)="onAddTask()"/>
+      <app-add-task [userId]="selectedUserId" (cancel_clicked)="onAddTaskClose()" (addTask)="onAddTask()"/>
     }
     <ul>
       <!-- @for (user of users; track user.id){ -->

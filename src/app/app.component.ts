@@ -16,7 +16,7 @@ import { NewTask } from './components/add-task/new-task.model';
 })
 export class AppComponent {
 users = DUMMY_USERS
-selectedUserId?:string;
+selectedUserId!:string;
 showAddTask= false;
 
 get selectedUser(){
